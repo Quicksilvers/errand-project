@@ -19,7 +19,7 @@ class AuthorizeController extends AbstractActionController
             ->getServiceLocator()
             ->get('Doctrine\ORM\EntityManager');
 
-        $user = new \Application\Entity\User();
+        $user = new \Authorization\Entity\User();
         $user->setFullName('Marco Pivetta');
 
         $objectManager->persist($user);
