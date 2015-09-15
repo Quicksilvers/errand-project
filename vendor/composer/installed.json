@@ -5117,5 +5117,69 @@
         "keywords": [
             "zf2"
         ]
+    },
+    {
+        "name": "socalnick/scn-social-auth-doctrine-orm",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/SocalNick/ScnSocialAuthDoctrineORM.git",
+            "reference": "429133a349008340ae84feb8c8152cd4dba53d67"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/SocalNick/ScnSocialAuthDoctrineORM/zipball/429133a349008340ae84feb8c8152cd4dba53d67",
+            "reference": "429133a349008340ae84feb8c8152cd4dba53d67",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "socalnick/scn-social-auth": "1.*",
+            "zendframework/zend-modulemanager": "~2.0",
+            "zendframework/zend-servicemanager": "~2.0",
+            "zendframework/zend-stdlib": "~2.0",
+            "zf-commons/zfc-user-doctrine-orm": "1.*"
+        },
+        "time": "2015-04-18 18:48:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "ScnSocialAuthDoctrineORM": "src/"
+            },
+            "classmap": [
+                "./"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Nicholas Calugar",
+                "email": "njcalugar@gmail.com",
+                "homepage": "http://socalnick.github.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Jérémy Huet",
+                "email": "jeremy.huet+github@gmail.com",
+                "homepage": "http://glpl.us/jhuet",
+                "role": "Developer"
+            }
+        ],
+        "description": "An extension of ScnSocialAuth that provides integration with Doctrine2 ORM.",
+        "homepage": "https://github.com/SocalNick/ScnSocialAuthDoctrineORM",
+        "keywords": [
+            "doctrine2",
+            "hybridauth",
+            "oauth",
+            "orm",
+            "socialauth",
+            "zf2",
+            "zfc"
+        ]
     }
 ]

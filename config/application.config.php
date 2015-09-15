@@ -17,6 +17,7 @@ return array(
         'ZfcUserDoctrineORM',
         'Authorization',
         'ScnSocialAuth',
+        'ScnSocialAuthDoctrineORM',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

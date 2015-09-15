@@ -13,6 +13,7 @@ return array(
     'ZendXml\\' => array($vendorDir . '/zendframework/zendxml/library'),
     'ZendDeveloperTools' => array($vendorDir . '/zendframework/zend-developer-tools/src'),
     'ScnSocialAuthTest' => array($vendorDir . '/socalnick/scn-social-auth/test'),
+    'ScnSocialAuthDoctrineORM' => array($vendorDir . '/socalnick/scn-social-auth-doctrine-orm/src'),
     'ScnSocialAuth' => array($vendorDir . '/socalnick/scn-social-auth/src'),
     'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'Hybrid' => array($vendorDir . '/hybridauth/hybridauth/hybridauth'),

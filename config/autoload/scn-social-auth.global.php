@@ -12,7 +12,7 @@ $settings = array(
      * Please specify the DI alias for the configured Zend\Db\Adapter\Adapter
      * instance that ZfcUser should use.
      */
-    //'zend_db_adapter' => 'Zend\Db\Adapter\Adapter',
+    'zend_db_adapter' => 'Zend\Db\Adapter\Adapter',
 
     /**
      * Zend\Session\SessionManager DI Alias
@@ -20,7 +20,7 @@ $settings = array(
      * Please specify the DI alias for the configured Zend\Session\SessionManager
      * instance that ScnSocialAuth should use.
      */
-    //'zend_session_manager' => 'Zend\Session\SessionManager',
+    'zend_session_manager' => 'Zend\Session\SessionManager',
 
     /**
      * User Provider Entity Class
@@ -28,7 +28,7 @@ $settings = array(
      * Name of Entity class to use. Useful for using your own entity class
      * instead of the default one provided. Default is ScnSocialAuth\Entity\UserProvider.
      */
-    //'user_provider_entity_class' => 'ScnSocialAuth\Entity\UserProvider',
+    'user_provider_entity_class' => 'ScnSocialAuth\Entity\UserProvider',
 
     /**
      * BitBucket Enabled
@@ -42,7 +42,7 @@ $settings = array(
      *
      * Please specify if Facebook is enabled
      */
-    //'facebook_enabled' => true,
+    'facebook_enabled' => true,
 
     /**
      * Facebook Scope
@@ -109,7 +109,7 @@ $settings = array(
      *
      * Please specify if Google is enabled
      */
-    //'google_enabled' => true,
+    'google_enabled' => true,
 
     /**
      * Google Scope
