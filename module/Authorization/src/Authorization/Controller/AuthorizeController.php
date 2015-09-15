@@ -15,16 +15,6 @@ class AuthorizeController extends AbstractActionController
 {
     public function indexAction()
     {
-        $objectManager = $this
-            ->getServiceLocator()
-            ->get('Doctrine\ORM\EntityManager');
 
-        $user = new \Authorization\Entity\User();
-        $user->setFullName('Marco Pivetta');
-
-        $objectManager->persist($user);
-        $objectManager->flush();
-
-        die(var_dump($user->getId()));
     }
 }

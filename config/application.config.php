@@ -12,7 +12,11 @@ return array(
         'ZendDeveloperTools',
         'DoctrineModule',
         'DoctrineORMModule',
+        'ZfcBase',
+        'ZfcUser',
+        'ZfcUserDoctrineORM',
         'Authorization',
+        'ScnSocialAuth',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

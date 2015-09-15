@@ -37,5 +37,10 @@ return array(
         'invokables' => array(
             'Authorization\Controller\Authorize' => 'Authorization\Controller\AuthorizeController'
         )
-    )
+    ),
+    'service_manager' => array(
+        'invokables' => array(
+            'Zend\Session\SessionManager' => 'Zend\Session\SessionManager',
+        ),
+    ),
 );
