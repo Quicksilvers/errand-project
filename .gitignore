@@ -1,4 +1,4 @@
-vendor/
+
 .idea/
 # Local configs
 config/autoload/*.local.php

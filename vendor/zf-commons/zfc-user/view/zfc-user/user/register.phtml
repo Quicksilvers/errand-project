@@ -26,6 +26,13 @@ $form->setAttribute('autocomplete', 'off');
             <dd><?php echo $this->formInput($element) . $this->formElementErrors($element) ?></dd>
         <?php endif ?>
     <?php endforeach ?>
+        <dt>Select Language</dt>
+        <dd>
+            <select name="language">
+                <option>En</option>
+                <option>Fr</option>
+            </select>
+        </dd>
     </dl>
     <?php if ($this->redirect): ?>
         <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />

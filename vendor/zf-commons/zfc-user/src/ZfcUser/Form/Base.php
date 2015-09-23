@@ -22,6 +22,16 @@ class Base extends ProvidesEventsForm
             ),
         ));
 
+        $this->add([
+            'name' => "phone",
+            'options' => [
+                'label' => 'Mobile number'
+            ],
+            'attributes' => [
+                'type' => 'text'
+            ]
+        ]);
+
         $this->add(array(
             'name' => 'email',
             'options' => array(
@@ -61,6 +71,61 @@ class Base extends ProvidesEventsForm
             ),
             'attributes' => array(
                 'type' => 'password'
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'credit_card',
+            'options' => array(
+                'label' => 'Credit card number',
+            ),
+            'attributes' => array(
+                'type' => 'text'
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'cvv',
+            'options' => array(
+                'label' => 'CVV',
+            ),
+            'attributes' => array(
+                'type' => 'text'
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'expiration_date',
+            'options' => array(
+                'label' => 'Expiration date',
+            ),
+            'attributes' => array(
+                'type' => 'date'
+            ),
+        ));
+
+        $this->add(array(
+            'type' => 'Zend\Form\Element\Select',
+            'name' => 'language',
+            'attributes' => [
+                'options' => [
+                    'En' => 'En',
+                    'Fr' => 'Fr'
+                ]
+            ],
+            'options' => array(
+                'label' => 'Which is your mother tongue?',
+
+            )
+        ));
+
+        $this->add(array(
+            'name' => 'postalCode',
+            'options' => array(
+                'label' => 'Postal Code',
+            ),
+            'attributes' => array(
+                'type' => 'text'
             ),
         ));
 
