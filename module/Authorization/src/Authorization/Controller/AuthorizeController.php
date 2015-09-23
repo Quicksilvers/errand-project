@@ -13,8 +13,8 @@ use Zend\View\Model\ViewModel;
 
 class AuthorizeController extends AbstractActionController
 {
-    public function indexAction()
+    public function registerAction()
     {
-
+        echo 1;
     }
 }

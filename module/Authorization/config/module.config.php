@@ -24,12 +24,25 @@ return array(
             'auth' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/auth',
+                    'route' => '/login',
                     'defaults' => array(
                         'controller' => 'Authorization\Controller\Authorize',
                         'action'     => 'index'
                     )
-                )
+                ),
+                'may_terminate' => true,
+                'child_routes'  => [
+                    'provider' => [
+                        'type' => 'Literal',
+                        'options' => [
+                          'route' => '/provider',
+                          'defaults' => [
+                              'controller' => 'Authorization\Controller\Authorize',
+                              'action'     => 'register'
+                          ]
+                        ]
+                    ]
+                ]
             )
         )
     ),
