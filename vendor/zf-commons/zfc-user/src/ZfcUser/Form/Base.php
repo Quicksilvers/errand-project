@@ -13,12 +13,51 @@ class Base extends ProvidesEventsForm
         parent::__construct();
 
         $this->add(array(
+            'name' => 'need',
+            'type' =>  'Zend\Form\Element\Checkbox',
+            'options' => array(
+                'label' => 'You have a need',
+            ),
+            'attributes' => array(
+                'type' => 'checkbox',
+                'class' => 'help',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'want',
+            'type' =>  'Zend\Form\Element\Checkbox',
+            'options' => array(
+                'label' => 'You have a want',
+            ),
+            'attributes' => array(
+                'type' => 'checkbox',
+                'class' => 'help',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'read',
+            'type' =>  'Zend\Form\Element\Checkbox',
+            'options' => array(
+                'label' => 'You have a want',
+            ),
+            'attributes' => array(
+                'type' => 'checkbox',
+                'class' => 'read'
+            ),
+        ));
+
+
+        $this->add(array(
             'name' => 'username',
             'options' => array(
                 'label' => 'Username',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Full Name e.g:00 000 000',
             ),
         ));
 
@@ -28,7 +67,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Mobile number'
             ],
             'attributes' => [
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Mobile Number e.g:00 000 000',
             ]
         ]);
 
@@ -38,7 +79,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Email',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Email ID',
             ),
         ));
 
@@ -48,7 +91,8 @@ class Base extends ProvidesEventsForm
                 'label' => 'Display Name',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
             ),
         ));
 
@@ -59,7 +103,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Password',
             ),
             'attributes' => array(
-                'type' => 'password'
+                'type' => 'password',
+                'class' => 'form-control',
+                'placeholder' => 'Password',
             ),
         ));
 
@@ -70,17 +116,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Password Verify',
             ),
             'attributes' => array(
-                'type' => 'password'
-            ),
-        ));
-
-        $this->add(array(
-            'name' => 'credit_card',
-            'options' => array(
-                'label' => 'Credit card number',
-            ),
-            'attributes' => array(
-                'type' => 'text'
+                'type' => 'password',
+                'class' => 'form-control',
+                'placeholder' => 'Confirm Password',
             ),
         ));
 
@@ -90,9 +128,24 @@ class Base extends ProvidesEventsForm
                 'label' => 'CVV',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'CVV',
             ),
         ));
+
+        $this->add(array(
+            'name' => 'credit_card',
+            'options' => array(
+                'label' => 'Credit card number',
+            ),
+            'attributes' => array(
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Credit Card',
+            ),
+        ));
+
 
         $this->add(array(
             'name' => 'expiration_date',
@@ -100,7 +153,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Expiration date',
             ),
             'attributes' => array(
-                'type' => 'date'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Expiration Date e.g: mm/yyyy',
             ),
         ));
 
@@ -109,9 +164,12 @@ class Base extends ProvidesEventsForm
             'name' => 'language',
             'attributes' => [
                 'options' => [
+                    'Select Language' => 'Select Language',
                     'En' => 'En',
                     'Fr' => 'Fr'
-                ]
+                ],
+                'class' => 'form-control',
+
             ],
             'options' => array(
                 'label' => 'Which is your mother tongue?',
@@ -125,7 +183,9 @@ class Base extends ProvidesEventsForm
                 'label' => 'Postal Code',
             ),
             'attributes' => array(
-                'type' => 'text'
+                'type' => 'text',
+                'class' => 'form-control',
+                'placeholder' => 'Postal Code e.g: 000 000',
             ),
         ));
 
@@ -134,6 +194,8 @@ class Base extends ProvidesEventsForm
             ->setLabel('Submit')
             ->setAttributes(array(
                 'type'  => 'submit',
+                'class' => 'btn_one',
+
             ));
 
         $this->add($submitElement, array(
@@ -144,7 +206,8 @@ class Base extends ProvidesEventsForm
             'name' => 'userId',
             'type' => 'Zend\Form\Element\Hidden',
             'attributes' => array(
-                'type' => 'hidden'
+                'type' => 'hidden',
+
             ),
         ));
 
