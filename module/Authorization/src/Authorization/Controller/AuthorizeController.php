@@ -8,6 +8,7 @@
 
 namespace Authorization\Controller;
 
+use Zend\InputFilter\InputFilter;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 use Authorization\Form\RegisterForm;
@@ -21,10 +22,13 @@ class AuthorizeController extends AbstractActionController
     /** @var AuthorizeService $authorizeService */
     protected $authorizeService;
 
-    public function __construct($registerForm, AuthorizeService $authorizeService)
+    protected $registerInputFilter;
+
+    public function __construct($registerForm, AuthorizeService $authorizeService, $registerInputFilter)
     {
         $this->registerForm     = $registerForm;
         $this->authorizeService = $authorizeService;
+        $this->registerInputFilter = $registerInputFilter;
     }
 
     public function registerAction()
@@ -32,6 +36,7 @@ class AuthorizeController extends AbstractActionController
         $request = $this->getRequest();
 
         if($request->isPost()) {
+            $this->registerForm->setInputFilter($this->registerInputFilter);
             $this->registerForm->setData($request->getPost());
 
             if($this->registerForm->isValid()) {

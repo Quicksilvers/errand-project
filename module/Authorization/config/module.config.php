@@ -67,6 +67,11 @@ return array(
             'registerForm' => 'Authorization\Form\RegisterForm'
             ]
         ],
+    'input_filters' => [
+        'invokables' => [
+            'RegisterFormInputFilter' => 'Authorization\InputFilter\RegisterFormInputFilter',
+        ]
+    ],
     'view_manager' => [
         'template_path_stack' => array(
             __DIR__ . '/../view',
