@@ -53,12 +53,12 @@ class Provider
     protected $password;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     protected $vehicle;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="boolean", nullable=true)
      */
     protected $availability;
 

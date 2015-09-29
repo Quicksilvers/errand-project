@@ -5,6 +5,9 @@
  * Date: 13.09.15
  * Time: 17:06
  */
+
+use Authorization\Factory;
+use Authorization\Form;
 return array(
     'doctrine' => array(
         'driver' => array(
@@ -24,7 +27,7 @@ return array(
             'auth' => array(
                 'type' => 'Literal',
                 'options' => array(
-                    'route' => '/login',
+                    'route' => '/register',
                     'defaults' => array(
                         'controller' => 'Authorization\Controller\Authorize',
                         'action'     => 'index'
@@ -47,13 +50,26 @@ return array(
         )
     ),
     'controllers' => array(
-        'invokables' => array(
-            'Authorization\Controller\Authorize' => 'Authorization\Controller\AuthorizeController'
+        'factories' => array(
+            'Authorization\Controller\Authorize' => Factory\AuthorizeControllerFactory::class
         )
     ),
     'service_manager' => array(
         'invokables' => array(
             'Zend\Session\SessionManager' => 'Zend\Session\SessionManager',
         ),
+        'factories' => [
+            'Authorization\Service\AuthorizeService' => Factory\AuthorizeServiceFactory::class
+        ]
     ),
+    'form_elements' => [
+        'invokables' => [
+            'registerForm' => 'Authorization\Form\RegisterForm'
+            ]
+        ],
+    'view_manager' => [
+        'template_path_stack' => array(
+            __DIR__ . '/../view',
+        ),
+    ]
 );

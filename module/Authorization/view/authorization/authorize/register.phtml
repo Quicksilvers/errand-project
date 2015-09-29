@@ -1,0 +1,17 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: artem
+ * Date: 24.09.15
+ * Time: 23:58
+ */
+$form = $this->form;
+$form->setAttribute('action', $this->url('auth/provider'));
+$form->setAttribute('method', 'post');
+$form->prepare();
+
+echo $this->form()->openTag($form);
+
+echo $this->formCollection($form);
+
+echo $this->form()->closeTag();
