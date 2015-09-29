@@ -63,14 +63,14 @@ $settings = array(
      *
      * Please specify a Google Client ID
      */
-    'google_client_id' => '410313828199-9r16p681cr3ji20d809t059cc1g1mg8o.apps.googleusercontent.com',
+    'google_client_id' => '242297520810-2pjlr2tul29lq5dvtm7ovjqudi4mbbib.apps.googleusercontent.com',
 
     /**
      * Google Secret
      *
      * Please specify a Google Secret
      */
-    'google_secret' => 'PK1iNacgKUlguGchlzxdpQKu',
+    'google_secret' => '6saYLQSjtOC4UotQarIYhNoO',
 
     /**
      * Google Hosted Domain
