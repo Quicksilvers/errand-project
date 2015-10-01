@@ -60,6 +60,9 @@ dialog {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+*:focus {
+    outline: none;
+}
 a {
     text-decoration: none;
     outline: none;
@@ -184,6 +187,15 @@ input#search_errand {
 }
 select.search {
     padding: 0px 10px 2px 15px;
+    background-image: url('../img/222.png');
+    background-position: 155px 9px;
+    background-repeat: no-repeat;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    -ms-appearance: none;
+    appearance: none!important;
 }
 /*main content*/
 article.content {
@@ -221,7 +233,6 @@ h2 {
     margin: 15px 0px 0;
     border-radius: 5px;
 }
-
 /*index page*/
 .description_block {
     background: #dddddf;
@@ -373,7 +384,7 @@ i.icon.logo {
     border: 1px solid #8a9fbc;
     width: 100%;
     height: 30px;
-    padding: 0 13px;
+    padding: 0 25px;
 }
 .account_form .cvc .col:first-child {
     float: right;
@@ -393,13 +404,58 @@ i.icon.logo {
 .checkbox-holder label {
     padding: 0 10px 0px 0;
 }
-.checkbox_read span > a{
+.checkbox span > a{
     text-transform: none;
 }
 input[type="checkbox"] {
     -webkit-appearance: checkbox;
     margin-top: -1px;
     cursor: pointer;
+}
+select#language {
+    background-color: #fff;
+    color: #8a9fbc;
+    background-image: url('../img/book.png');
+    background-position: 8px 9px;
+    background-repeat: no-repeat;
+}
+input#name {
+    background-image: url('../img/men.png');
+    background-position: 5px 7px;
+    background-repeat: no-repeat;
+}
+input#phone {
+    background-image: url('../img/phone.png');
+    background-position: 7px 9px;
+    background-repeat: no-repeat;
+}
+input#email {
+    background-image: url('../img/email.png');
+    background-position: 7px 10px;
+    background-repeat: no-repeat;
+}
+input#password, input#confirm_password {
+    background-image: url('../img/111.png');
+    background-position: 9px 9px;
+    background-repeat: no-repeat;
+}
+input#card-number {
+    background-image: url('../img/card.png');
+    background-position: 6px 9px;
+    background-repeat: no-repeat;
+}
+input#date {
+    background-image: url('../img/date.png');
+    background-position: 8px 8px;
+    background-repeat: no-repeat;
+}
+input#postal_code {
+    background-image: url('../img/post.png');
+    background-position: 7px 9px;
+    background-repeat: no-repeat;
+}
+input#cvc {
+    padding: 0 0px 0 17px;
 }
 input[type="checkbox"].help{
     width: 20px;
@@ -557,7 +613,7 @@ ul.payment {
     display: inline-block;
     width: 44%;
     text-align: left;
-    margin: 0px 0 0 115px;
+    margin: 0px 0 0 125px;
     color: #747474;
 }
 .about_us p, .copy{

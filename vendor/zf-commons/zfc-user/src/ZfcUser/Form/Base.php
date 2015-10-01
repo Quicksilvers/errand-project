@@ -57,6 +57,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'name',
                 'placeholder' => 'Full Name e.g:00 000 000',
             ),
         ));
@@ -69,6 +70,7 @@ class Base extends ProvidesEventsForm
             'attributes' => [
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'phone',
                 'placeholder' => 'Mobile Number e.g:00 000 000',
             ]
         ]);
@@ -81,6 +83,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'email',
                 'placeholder' => 'Email ID',
             ),
         ));
@@ -105,6 +108,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'password',
                 'class' => 'form-control',
+                'id' => 'password',
                 'placeholder' => 'Password',
             ),
         ));
@@ -118,6 +122,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'password',
                 'class' => 'form-control',
+                'id' => 'confirm_password',
                 'placeholder' => 'Confirm Password',
             ),
         ));
@@ -130,6 +135,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'cvc',
                 'placeholder' => 'CVV',
             ),
         ));
@@ -142,6 +148,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'card-number',
                 'placeholder' => 'Credit Card',
             ),
         ));
@@ -155,6 +162,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'date',
                 'placeholder' => 'Expiration Date e.g: mm/yyyy',
             ),
         ));
@@ -169,6 +177,7 @@ class Base extends ProvidesEventsForm
                     'Fr' => 'Fr'
                 ],
                 'class' => 'form-control',
+                'id' => 'language',
 
             ],
             'options' => array(
@@ -185,6 +194,7 @@ class Base extends ProvidesEventsForm
             'attributes' => array(
                 'type' => 'text',
                 'class' => 'form-control',
+                'id' => 'postal_code',
                 'placeholder' => 'Postal Code e.g: 000 000',
             ),
         ));
