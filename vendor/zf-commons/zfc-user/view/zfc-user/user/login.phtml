@@ -1,4 +1,3 @@
-<h1><?php echo $this->translate('Sign In'); ?></h1>
 
 <?php
 $form = $this->loginForm;
@@ -6,27 +5,57 @@ $form->prepare();
 $form->setAttribute('action', $this->url('zfcuser/login'));
 $form->setAttribute('method', 'post');
 $form->setAttribute('autocomplete', 'off');
+$form->setAttribute('id', 'sing_in');
 ?>
+<div class="popup-box" id="popup-box-1">
+    <div class="close"></div>
+    <?php echo $this->form()->openTag($form) ?>
+    <div class="top">
+        <div class="close"></div>
+        <h2>Sing in to</h2>
 
-<?php echo $this->form()->openTag($form) ?>
+        <div class="checkbox-help">
+            <label>
+                <input type="checkbox" class="help" name="help" value="receive" checked=""/>
+                <span>Receive Help</span>
+            </label>
+            <label>
+                <input type="checkbox" class="help" name="help" value="provide"/>
+                <span>Provide Help</span>
+            </label>
+        </div>
 
-    <dl class="zend_form">
-        <?php echo $this->formElementErrors($form->get('identity')) ?>
+    </div>
+    <div class="bottom ">
+        <div class="login_in">
+            <div class="row">
+                <?php echo $this->formInput($form->get('identity')) ?>
+            </div>
+            <div class="row">
+                <?php echo $this->formInput($form->get('credential')) ?>
+            </div>
+            <div class="row">
+                <div class="submit-holder">
+                    <?php echo $this->formButton($form->get('submit')) ?>
+                </div>
+                <a href="#" class="forgot">Forgot Password?</a>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="remember" value="remember"/>
+                    <span>Remember me</a></span>
+                </label>
+            </div>
 
-        <dt><?php echo $this->formLabel($form->get('identity')) ?></dt>
-        <dd><?php echo $this->formInput($form->get('identity')) ?></dd>
-
-        <dt><?php echo $this->formLabel($form->get('credential')) ?></dt>
-        <dd><?php echo $this->formInput($form->get('credential')) ?></dd>
-
-        <?php if ($this->redirect): ?>
-            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
-        <?php endif ?>
-
-        <dd><?php echo $this->formButton($form->get('submit')) ?></dd>
-    </dl>
-
+        </div>
+        <div class="via">
+            <h3>Sigin In via</h3>
+            <a href="/user/login/google" ><img class="google" src="../img/google.png" /></a>
+            <a href="/user/login/facebook" ><img src="../img/facebook.png" /></a>
+        </div>
+    </div>
 <?php echo $this->form()->closeTag() ?>
+</div>
 
 <?php if ($this->enableRegistration) : ?>
 <?php echo $this->translate('Not registered?'); ?> <a href="<?php echo $this->url('zfcuser/register') . ($this->redirect ? '?redirect='.$this->escapeUrl($this->redirect) : '') ?>"><?php echo $this->translate('Sign up!'); ?></a>
