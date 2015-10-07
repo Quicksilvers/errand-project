@@ -14,11 +14,22 @@ use Zend\Mvc\MvcEvent;
 
 class Module
 {
+    private $serviceManager,
+            $app;
+
     public function onBootstrap(MvcEvent $e)
     {
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        $this->app = $e->getApplication();
+        $this->serviceManager = $this->app->getServiceManager();
+
+        $form = $this->serviceManager->get('zfcuser_login_form');
+
+        $application = $e->getParam('application');
+        $viewModel = $application->getMvcEvent()->getViewModel();
+        $viewModel->loginForm = $form;
     }
 
     public function getConfig()
