@@ -1,4 +1,12 @@
-<?php echo $this->doctype(); ?>
+<?php
+echo $this->doctype();
+$form = $this->loginForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/login'));
+$form->setAttribute('method', 'post');
+$form->setAttribute('autocomplete', 'off');
+$form->setAttribute('id', 'sing_in');
+?>
 
 <html lang="en">
     <head>
@@ -28,14 +36,6 @@
 
     </head>
     <body>
-    <?php
-    $form = $this->loginForm;
-    $form->prepare();
-    $form->setAttribute('action', $this->url('zfcuser/login'));
-    $form->setAttribute('method', 'post');
-    $form->setAttribute('autocomplete', 'off');
-    $form->setAttribute('id', 'sing_in');
-    ?>
     <div class="popup-box" id="popup-box-1">
         <div class="close"></div>
         <?php echo $this->form()->openTag($form) ?>

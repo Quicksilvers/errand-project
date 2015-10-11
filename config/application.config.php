@@ -15,10 +15,12 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
-        'Authorization',
         'ScnSocialAuth',
         'ScnSocialAuthDoctrineORM',
-        'ZfrRest'
+        'ZfrRest',
+
+        'Service',
+        'Authorization',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

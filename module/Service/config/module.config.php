@@ -12,20 +12,20 @@ return [
             'application_entities' => array(
                 'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
                 'cache' => 'array',
-                'paths' => array(__DIR__ . '/../src/Authorization/Entity')
+                'paths' => array(__DIR__ . '/../src/Service/Entity')
             ),
 
             'orm_default' => array(
                 'drivers' => array(
-                    'Authorization\Entity' => 'application_entities'
+                    'Service\Entity' => 'application_entities'
                 )
             ))),
     'router' => [
         'routes' => [
-            'service' => [
+            'serviceProvider' => [
                 'type' => 'Segment',
                 'options' => [
-                    'route' => '/service[:/service_id]',
+                    'route' => '/service[/:service_id]',
                     'defaults' => [
                         'controller' => 'Service\ServiceProviderController'
                     ]

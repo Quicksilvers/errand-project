@@ -10,6 +10,8 @@ namespace Authorization\Entity;
 
 use Doctrine\Instantiator\Exception\InvalidArgumentException;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Service\Entity\Service;
 
 /**
  * @ORM\Entity
@@ -17,14 +19,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Provider
 {
-
-    const AVAILABLE = 'available';
-    const AVAILABLE_NONE = 'unavailable';
-
-    protected $availabilityDefault = [
-        Provider::AVAILABLE,
-        Provider::AVAILABLE_NONE
-    ];
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -61,6 +55,17 @@ class Provider
      * @ORM\Column(type="boolean", nullable=true)
      */
     protected $availability;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="Service\Entity\Service", mappedBy="providers")
+     */
+    protected $services;
+
+    public function __construct()
+    {
+        $this->services = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -159,10 +164,6 @@ class Provider
      */
     public function setVehicle($vehicle)
     {
-        if(!in_array($vehicle, $this->availabilityDefault)) {
-            return new InvalidArgumentException('vehicle is not valid');
-        }
-
         $this->vehicle = $vehicle;
         return $this;
     }
@@ -182,15 +183,41 @@ class Provider
      */
     public function setAvailability($availability)
     {
-        if(!in_array($availability, $this->availabilityDefault)) {
-            return new InvalidArgumentException('availability is not valid');
-        }
-
         $this->availability = $availability;
 
         return $this;
     }
 
+    /**
+     * @return ArrayCollection
+     */
+    public function getServices()
+    {
+        return $this->services;
+    }
 
+    /**
+     * @param Service $service
+     * @return $this
+     */
+    public function addService(Service $service)
+    {
+        $this->services->add($service);
+        $service->getProviders()->add($this);
+
+        return $this;
+    }
+
+    /**
+     * @param Service $service
+     * @return $this
+     */
+    public function removeService(Service $service)
+    {
+        $this->services->removeElement($service);
+        $service->getProviders()->removeElement($this);
+
+        return $this;
+    }
 
 }
