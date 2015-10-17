@@ -6,6 +6,7 @@
  * Time: 0:04
  */
 use Service\Controller;
+use Service\Factory;
 return [
     'doctrine' => array(
         'driver' => array(
@@ -34,8 +35,18 @@ return [
         ]
     ],
     'controllers' => [
-        'invokables' => [
-            'Service\ServiceProviderController' => Controller\ServiceProviderController::class
+        'factories' => [
+            'Service\ServiceProviderController' => Factory\ServiceProviderControllerFactory::class,
+        ]
+    ],
+    'service_manager' => [
+        'factories' => [
+            'Service\Service\ServiceService'    => Factory\ServiceServiceFactory::class
+        ]
+    ],
+    'view_manager' => [
+        'template_path_stack' => [
+            'service' => __DIR__ . '/../view'
         ]
     ],
 

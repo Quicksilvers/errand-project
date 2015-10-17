@@ -8,36 +8,29 @@
 
 namespace Service\Controller;
 
+use Service\Service\ServiceService;
 use ZfrRest\Mvc\Controller\AbstractRestfulController;
 use ZfrRest\View\Model\ResourceViewModel;
-use Service\Entity\Location;
 
 class ServiceProviderController extends AbstractRestfulController
 {
-    /**
-     * @var
-     */
-    protected $search_form;
+    /** @var ServiceService $serviceService */
+    protected $serviceService;
 
-    /**
-     * @return mixed
-     */
-
-    public function get()
+    public function __construct(ServiceService $service)
     {
-        echo 1;
+        $this->serviceService = $service;
     }
 
-    public function providerId()
+    public function get(array $params)
     {
-        if (!$this->search_form) {
-            $form = $this->getServiceLocator()->get('SearchForm');
+        if(!empty($params['service_id'])) {
+
         }
-        $location = new Location();
 
-        echo '<pre>';
-        print_r($location->getName());
-        echo '</pre>';exit;
-
+        $services = $this->serviceService->findAll();
+        return new ResourceViewModel(
+            ['services' => $services], ['template' => 'service/services']
+        );
     }
 }

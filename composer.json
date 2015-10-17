@@ -12,7 +12,7 @@
         "zendframework/zendframework": "~2.5",
         "doctrine/doctrine-orm-module": "0.7.*",
         "zendframework/zend-developer-tools": "dev-master",
-        "zf-commons/zfc-user-doctrine-orm": "^1.0",
+        "zf-commons/zfc-user-doctrine-orm": "1.0",
         "socalnick/scn-social-auth": "1.*",
         "socalnick/scn-social-auth-doctrine-orm" : ">=1.3.0@stable",
         "zfr/zfr-rest": "0.4.*",
