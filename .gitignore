@@ -12,6 +12,7 @@ data/cache/
 data/sessions/
 data/tmp/
 temp/
+vendor/
 
 # Legacy ZF1
 demos/

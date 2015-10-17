@@ -9,6 +9,7 @@ namespace Service;
 
 use Zend\Mvc\MvcEvent;
 
+
 class Module
 {
 
@@ -28,4 +29,5 @@ class Module
             ),
         );
     }
+
 }

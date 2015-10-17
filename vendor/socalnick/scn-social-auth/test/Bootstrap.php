@@ -1,7 +1,6 @@
 <?php
 namespace ScnSocialAuthtest;
 
-use Zend\Loader\AutoloaderFactory;
 use RuntimeException;
 
 error_reporting(E_ALL | E_STRICT);
@@ -24,30 +23,17 @@ class Bootstrap
             $loader = include $vendorPath . '/autoload.php';
         }
 
-        $zf2Path = getenv('ZF2_PATH') ?: (defined('ZF2_PATH') ? ZF2_PATH : (is_dir($vendorPath . '/zendframework/zendframework/library') ? $vendorPath . '/zendframework/zendframework/library' : false));
+        $zf2Path = getenv('ZF2_PATH') ?: (defined('ZF2_PATH') ? ZF2_PATH : (is_dir($vendorPath . '/zendframework') ? $vendorPath . '/zendframework' : false));
 
         if (!$zf2Path) {
             throw new RuntimeException('Unable to load ZF2. Run `php composer.phar install` or define a ZF2_PATH environment variable.');
         }
 
-        if (isset($loader)) {
-            $loader->add('Zend', $zf2Path . '/Zend');
-        } else {
-            include $zf2Path . '/Zend/Loader/AutoloaderFactory.php';
-            include $zf2Path . '/Zend/Loader/ClassMapAutoloader.php';
-            AutoloaderFactory::factory(array(
-                'Zend\Loader\ClassMapAutoloader' => array(array(
-                    'ScnSocialAuth\Module' => __DIR__ . '/../Module.php',
-                )),
-                'Zend\Loader\StandardAutoloader' => array(
-                    'autoregister_zf' => true,
-                    'namespaces' => array(
-                        'ScnSocialAuth' => __DIR__ . '/../src/ScnSocialAuth',
-                        __NAMESPACE__ => __DIR__ . '/' . __NAMESPACE__,
-                    ),
-                ),
-            ));
+        if (!isset($loader)) {
+            throw new RuntimeException('Unable to run tests without composer autoloader');
         }
+
+        $loader->add('Zend', $zf2Path . '/Zend');
     }
 
     protected static function findParentPath($path)
