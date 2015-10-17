@@ -49,13 +49,4 @@ return [
             'service' => __DIR__ . '/../view'
         ]
     ],
-
-    'view_manager' => [
-        'template_path_stack' => array(
-            __DIR__ . '/../view',
-        ),
-    ],
-
-
-
 ];
