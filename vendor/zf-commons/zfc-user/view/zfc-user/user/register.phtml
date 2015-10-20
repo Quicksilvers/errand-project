@@ -1,0 +1,151 @@
+
+<?php
+if (!$this->enableRegistration) {
+    print "Registration is disabled";
+    return;
+}
+$form = $this->registerForm;
+$form->prepare();
+$form->setAttribute('action', $this->url('zfcuser/register'));
+$form->setAttribute('method', 'post');
+$form->setAttribute('autocomplete', 'off');
+$form->setAttribute('class', 'account_form');
+$form->setAttribute('id', 'form-sign-up');
+
+?>
+<div class="container-center">
+    <article class="content">
+        <div class="description">
+            <div class="icon logo"></div>
+            <h1>Create a new eRRAND Asccount</h1>
+            <div class="text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehe
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                </p>
+                <h2>Already Have an account with us?</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <a href="#" class="sing_buttom">Sing in</a> <span>to you existing account</span>
+            </div>
+        </div>
+        <?php echo $this->form()->openTag($form) ?>
+        <form action="" method="POST" id="form-sign-up" class="account_form">
+            <h2>Create Account</h2>
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span>
+            <div class="row">
+                <div class="checkbox-holder">
+                    <label>
+                        <?php echo $this->formCheckbox($form->get('need')); ?>
+                        <span>I Need Help</span>
+                    </label>
+                    <label>
+                        <?php echo $this->formCheckbox($form->get('want')); ?>
+                        <span>I Want to Help</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('username'));
+                    echo $this->formElementErrors($form->get('username'));
+                ?>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('phone'));
+                    echo $this->formElementErrors($form->get('phone'));
+                ?>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('email'));
+                    echo $this->formElementErrors($form->get('email'));
+                ?>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('password'));
+                    echo $this->formElementErrors($form->get('password'));
+                ?>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('passwordVerify'));
+                    echo $this->formElementErrors($form->get('passwordVerify'));
+                ?>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formSelect($form->get('language'));
+                ?>
+            </div>
+            <div class="row">
+                <div class="cvc">
+                    <div class="col">
+                        <?php
+                            echo $this->formInput($form->get('cvv'));
+                            echo $this->formElementErrors($form->get('cvv'));
+                        ?>
+                    </div>
+                    <div class="col">
+                        <?php
+                            echo $this->formInput($form->get('credit_card'));
+                            echo $this->formElementErrors($form->get('credit_card'));
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-cols">
+                    <div class="col">
+                        <?php
+                            echo $this->formInput($form->get('expiration_date'));
+                            echo $this->formElementErrors($form->get('expiration_date'));
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <?php
+                    echo $this->formInput($form->get('postalCode'));
+                    echo $this->formElementErrors($form->get('postalCode'));
+                ?>
+            </div>
+            <div class="row">
+                <div class="checkbox_read">
+                    <label>
+                        <?php echo $this->formCheckbox($form->get('read')); ?>
+                        <span>I have read the <a href="#">Terms & Condition</a> carefully and agree to the <a href="#">Privicy Policy</a></span>
+                    </label>
+                </div>
+            </div>
+            <div class="submit-holder">
+                <?php echo $this->formButton($form->get('submit')); ?>
+            </div>
+        </form>
+        <?php if ($this->redirect): ?>
+            <input type="hidden" name="redirect" value="<?php echo $this->escapeHtml($this->redirect) ?>" />
+        <?php endif ?>
+        <?php echo $this->form()->closeTag() ?>
+    </article>
+</div>
+
