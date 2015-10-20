@@ -12,7 +12,12 @@ data/cache/
 data/sessions/
 data/tmp/
 temp/
-/vendor
+vendor/*
+!vendor/zf-commons/*
+!vendor/socalnick/*
+
+!.gitignore
+
 # Legacy ZF1
 demos/
 extras/documentation
